@@ -1,0 +1,262 @@
+[
+    {
+        "id": "q1",
+        "text": "Consider the following statements regarding the 'Preamble' of the Indian Constitution: \n1. It is a source of power to legislature.\n2. Its provisions are enforceable in courts of law.\nWhich of the statements given above is/are correct?",
+        "options": [
+            "1 only",
+            "2 only",
+            "Both 1 and 2",
+            "Neither 1 nor 2"
+        ],
+        "correctAnswer": "Neither 1 nor 2",
+        "topic": "Polity",
+        "microTag": "Preamble"
+    },
+    {
+        "id": "q2",
+        "text": "Which of the following is NOT a feature of the Parliamentary form of government in India?",
+        "options": [
+            "Presence of nominal and real executives",
+            "Majority party rule",
+            "Collective responsibility of the executive to the legislature",
+            "Separation of powers between legislature and executive"
+        ],
+        "correctAnswer": "Separation of powers between legislature and executive",
+        "topic": "Polity",
+        "microTag": "System of Government"
+    },
+    {
+        "id": "q3",
+        "text": "With reference to 'Monetary Policy Committee (MPC)', consider the following statements:\n1. It is a 6-member body.\n2. The Governor of RBI is the ex-officio Chairman of MPC.\nWhich of the statements is/are correct?",
+        "options": [
+            "1 only",
+            "2 only",
+            "Both 1 and 2",
+            "Neither 1 nor 2"
+        ],
+        "correctAnswer": "Both 1 and 2",
+        "topic": "Economy",
+        "microTag": "Monetary Policy"
+    },
+    {
+        "id": "q4",
+        "text": "The term 'Capital Expenditure' in the Union Budget refers to:",
+        "options": [
+            "Subsidies on food and fertilizers",
+            "Salaries paid to government employees",
+            "Creation of physical and financial assets",
+            "Interest payments on past debts"
+        ],
+        "correctAnswer": "Creation of physical and financial assets",
+        "topic": "Economy",
+        "microTag": "Fiscal Policy"
+    },
+    {
+        "id": "q5",
+        "text": "Who among the following was the founder of the 'Ramakrishna Mission'?",
+        "options": [
+            "Swami Dayanand Saraswati",
+            "Swami Vivekananda",
+            "Raja Ram Mohan Roy",
+            "Ishwar Chandra Vidyasagar"
+        ],
+        "correctAnswer": "Swami Vivekananda",
+        "topic": "History",
+        "microTag": "Socio-Religious Movements"
+    },
+    {
+        "id": "q6",
+        "text": "The 'Subsidiary Alliance' system was introduced in India by:",
+        "options": [
+            "Lord Dalhousie",
+            "Lord Wellesley",
+            "Lord Cornwallis",
+            "Lord Hastings"
+        ],
+        "correctAnswer": "Lord Wellesley",
+        "topic": "History",
+        "microTag": "British Expansion"
+    },
+    {
+        "id": "q7",
+        "text": "Which one of the following is NOT a 'Rabi' crop?",
+        "options": [
+            "Wheat",
+            "Mustard",
+            "Gram",
+            "Rice"
+        ],
+        "correctAnswer": "Rice",
+        "topic": "Geography",
+        "microTag": "Agriculture"
+    },
+    {
+        "id": "q8",
+        "text": "The 'Roaring Forties' refers to:",
+        "options": [
+            "Strong westerly winds found in the Southern Hemisphere",
+            "Cyclonic storms in the Bay of Bengal",
+            "Ocean currents in the North Atlantic",
+            "Trade winds near the equator"
+        ],
+        "correctAnswer": "Strong westerly winds found in the Southern Hemisphere",
+        "topic": "Geography",
+        "microTag": "Climatology"
+    },
+    {
+        "id": "q9",
+        "text": "Which of the following conventions is related to the conservation of Wetlands?",
+        "options": [
+            "Kyoto Protocol",
+            "Montreal Protocol",
+            "Ramsar Convention",
+            "Stockholm Convention"
+        ],
+        "correctAnswer": "Ramsar Convention",
+        "topic": "Environment",
+        "microTag": "International Conventions"
+    },
+    {
+        "id": "q10",
+        "text": "The term 'Biomagnification' refers to:",
+        "options": [
+            "Increase in the population of species",
+            "Accumulation of toxic substances in higher trophic levels",
+            "Growth of a forest ecosystem",
+            "Decrease in biodiversity over time"
+        ],
+        "correctAnswer": "Accumulation of toxic substances in higher trophic levels",
+        "topic": "Environment",
+        "microTag": "Ecology"
+    },
+    {
+        "id": "q11",
+        "text": "CRISPR-Cas9 technology is often in the news. It is related to:",
+        "options": [
+            "Space exploration",
+            "Gene editing",
+            "Quantum computing",
+            "Nanotechnology"
+        ],
+        "correctAnswer": "Gene editing",
+        "topic": "Science",
+        "microTag": "Biotechnology"
+    },
+    {
+        "id": "q12",
+        "text": "What is the primary objective of the 'Artemis' mission by NASA?",
+        "options": [
+            "Exploring Mars",
+            "Sending humans back to the Moon",
+            "Studying Jupiter's moons",
+            "Observing distant galaxies"
+        ],
+        "correctAnswer": "Sending humans back to the Moon",
+        "topic": "Science",
+        "microTag": "Space Technology"
+    },
+    {
+        "id": "q13",
+        "text": "Consider the following about the 'Right to Privacy':\n1. It is a fundamental right under Article 21.\n2. It was upheld in the K.S. Puttaswamy judgment.\nWhich of the statements is/are correct?",
+        "options": [
+            "1 only",
+            "2 only",
+            "Both 1 and 2",
+            "Neither 1 nor 2"
+        ],
+        "correctAnswer": "Both 1 and 2",
+        "topic": "Polity",
+        "microTag": "Fundamental Rights"
+    },
+    {
+        "id": "q14",
+        "text": "The term 'Stagflation' is used to describe a situation where:",
+        "options": [
+            "High inflation and high unemployment coexist",
+            "Inflation is negative",
+            "Economic growth is very high",
+            "Unemployment is at its minimum"
+        ],
+        "correctAnswer": "High inflation and high unemployment coexist",
+        "topic": "Economy",
+        "microTag": "Macroeconomics"
+    },
+    {
+        "id": "q15",
+        "text": "The Indus Valley Civilization site 'Lothal' is known for having:",
+        "options": [
+            "The Great Bath",
+            "A Dockyard",
+            "Bronze dancing girl statue",
+            "Evidence of a stadium"
+        ],
+        "correctAnswer": "A Dockyard",
+        "topic": "History",
+        "microTag": "Ancient India"
+    },
+    {
+        "id": "q16",
+        "text": "Which latitude passes through the middle of India?",
+        "options": [
+            "Equator",
+            "Tropic of Capricorn",
+            "Tropic of Cancer",
+            "Arctic Circle"
+        ],
+        "correctAnswer": "Tropic of Cancer",
+        "topic": "Geography",
+        "microTag": "Indian Geography"
+    },
+    {
+        "id": "q17",
+        "text": "The 'Red Data Book' published by IUCN contains lists of:",
+        "options": [
+            "Endemic plant and animal species present in biodiversity hotspots",
+            "Threatened plant and animal species",
+            "Protected sites for conservation of nature & natural resources",
+            "Globally important agricultural heritage systems"
+        ],
+        "correctAnswer": "Threatened plant and animal species",
+        "topic": "Environment",
+        "microTag": "Biodiversity"
+    },
+    {
+        "id": "q18",
+        "text": "Which of the following electromagnetic waves has the lowest frequency?",
+        "options": [
+            "X-rays",
+            "Ultraviolet rays",
+            "Radio waves",
+            "Microwaves"
+        ],
+        "correctAnswer": "Radio waves",
+        "topic": "Science",
+        "microTag": "Physics"
+    },
+    {
+        "id": "q19",
+        "text": "The 'G20' summit in 2023 was held in which country?",
+        "options": [
+            "Indonesia",
+            "Brazil",
+            "India",
+            "South Africa"
+        ],
+        "correctAnswer": "India",
+        "topic": "Current Affairs",
+        "microTag": "International Summits"
+    },
+    {
+        "id": "q20",
+        "text": "What is the main function of the 'Finance Commission' of India?",
+        "options": [
+            "Preparing the Union Budget",
+            "Regulating the stock market",
+            "Recommending distribution of tax revenues between center and states",
+            "Formulating monetary policy"
+        ],
+        "correctAnswer": "Recommending distribution of tax revenues between center and states",
+        "topic": "Polity",
+        "microTag": "Constitutional Bodies"
+    }
+]
