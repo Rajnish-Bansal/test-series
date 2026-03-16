@@ -1,6 +1,6 @@
-import connectToDatabase from './lib/db.js';
-import Progress from './models/Progress.js';
-import { verifyToken } from './lib/authMiddleware.js';
+import connectToDatabase from '../lib/db.js';
+import Progress from '../models/Progress.js';
+import { verifyToken } from '../lib/authMiddleware.js';
 
 export default async function handler(req, res) {
     await connectToDatabase();

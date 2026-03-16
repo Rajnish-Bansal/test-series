@@ -1,6 +1,6 @@
-import ErrorVault from './models/ErrorVault.js';
-import connectToDatabase from './lib/db.js';
-import { verifyToken } from './lib/authMiddleware.js';
+import ErrorVault from '../models/ErrorVault.js';
+import connectToDatabase from '../lib/db.js';
+import { verifyToken } from '../lib/authMiddleware.js';
 
 export default async function handler(req, res) {
     if (req.method !== 'GET') {

@@ -12,20 +12,20 @@ process.on('exit', (code) => {
 
 import express from 'express';
 import dotenv from 'dotenv';
-import questionsHandler from './api/questions.js';
-import evaluateHandler from './api/evaluate.js';
-import sessionsHandler from './api/sessions.js';
-import authHandler from './api/auth.js';
-import statsHandler from './api/stats.js';
-import subjectsHandler from './api/subjects.js';
-import progressHandler from './api/progress.js';
+import questionsHandler from './api/_handlers/questions.js';
+import evaluateHandler from './api/_handlers/evaluate.js';
+import sessionsHandler from './api/_handlers/sessions.js';
+import authHandler from './api/_handlers/auth.js';
+import statsHandler from './api/_handlers/stats.js';
+import subjectsHandler from './api/_handlers/subjects.js';
+import progressHandler from './api/_handlers/progress.js';
 
 // Admin Routes
-import adminLoginHandler from './api/admin/login.js';
-import adminVaultHandler from './api/admin/question-vault.js';
-import adminAnalyticsHandler from './api/admin/user-analytics.js';
-import adminCoverageHandler from './api/admin/topic-coverage.js';
-import adminSubjectsHandler from './api/admin/subjects.js';
+import adminLoginHandler from './api/_handlers/admin/login.js';
+import adminVaultHandler from './api/_handlers/admin/question-vault.js';
+import adminAnalyticsHandler from './api/_handlers/admin/user-analytics.js';
+import adminCoverageHandler from './api/_handlers/admin/topic-coverage.js';
+import adminSubjectsHandler from './api/_handlers/admin/subjects.js';
 
 dotenv.config();
 

@@ -1,6 +1,6 @@
-import connectToDatabase from '../lib/db.js';
-import User from '../models/User.js';
-import Session from '../models/Session.js';
+import connectToDatabase from '../../lib/db.js';
+import User from '../../models/User.js';
+import Session from '../../models/Session.js';
 
 export default async function handler(req, res) {
     if (req.method !== 'GET') {

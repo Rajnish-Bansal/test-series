@@ -1,5 +1,5 @@
-import connectToDatabase from '../lib/db.js';
-import Subject from '../models/Subject.js';
+import connectToDatabase from '../../lib/db.js';
+import Subject from '../../models/Subject.js';
 
 export default async function handler(req, res) {
     await connectToDatabase();
