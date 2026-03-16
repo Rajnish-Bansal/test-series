@@ -1,6 +1,7 @@
-import connectToDatabase from './lib/db.js';
-import Session from './models/Session.js';
 import ErrorVault from './models/ErrorVault.js';
+import Session from './models/Session.js';
+import connectToDatabase from './lib/db.js';
+import { verifyToken } from './lib/authMiddleware.js';
 
 export default async function handler(req, res) {
     if (req.method !== 'POST') {
@@ -10,15 +11,25 @@ export default async function handler(req, res) {
 
     await connectToDatabase();
 
+    const decoded = verifyToken(req);
+    if (!decoded) {
+        return res.status(401).json({ success: false, error: 'Unauthorized' });
+    }
+
     try {
         const { sessionData, incorrectQuestions } = req.body;
 
-        const session = await Session.create(sessionData);
+        const session = await Session.create({
+            ...sessionData,
+            userId: decoded.id,
+            timestamp: new Date()
+        });
 
         if (incorrectQuestions && incorrectQuestions.length > 0) {
             const errorDocs = incorrectQuestions.map(q => ({
                 ...q,
-                sessionId: session._id
+                sessionId: session._id,
+                userId: decoded.id
             }));
             await ErrorVault.insertMany(errorDocs);
         }

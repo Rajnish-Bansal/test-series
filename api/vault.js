@@ -1,5 +1,6 @@
-import connectToDatabase from './lib/db.js';
 import ErrorVault from './models/ErrorVault.js';
+import connectToDatabase from './lib/db.js';
+import { verifyToken } from './lib/authMiddleware.js';
 
 export default async function handler(req, res) {
     if (req.method !== 'GET') {
@@ -9,8 +10,13 @@ export default async function handler(req, res) {
 
     await connectToDatabase();
 
+    const decoded = verifyToken(req);
+    if (!decoded) {
+        return res.status(401).json({ success: false, error: 'Unauthorized' });
+    }
+
     try {
-        const errors = await ErrorVault.find().sort({ createdAt: -1 });
+        const errors = await ErrorVault.find({ userId: decoded.id }).sort({ createdAt: -1 });
         return res.status(200).json(errors);
     } catch (error) {
         console.error('Error fetching vault:', error);

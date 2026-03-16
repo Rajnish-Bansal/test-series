@@ -1,16 +1,33 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
 node_modules
 dist
 dist-ssr
 *.local
+.env
+.env.*
+!.env.example
+
+# Development/Temporary files
+tmp-*/
+tmp-*
+tmp/
+query
+*.log
+build.txt
+build.log
+
+# Reports and Linting
+*_report.json
+*.txt
+!README.md
+
+# Scripts
+audit-coverage.cjs
+check_db.mjs
+debug-handler.cjs
+re-map-questions.cjs
+realistic-test.js
+seed_user.js
+test-sectional-api.js
 
 # Editor directories and files
 .vscode/*

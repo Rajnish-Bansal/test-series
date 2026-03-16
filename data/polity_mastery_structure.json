@@ -1,0 +1,54 @@
+{
+  "subject": "Polity",
+  "tiers": [
+    {
+      "id": "tier1",
+      "name": "High Yield",
+      "weight": 3,
+      "badge": "🔥 High Yield",
+      "topics": [
+        { "topic_id": "T04", "name": "Fundamental Rights", "subtopics": [ { "id": 8, "name": "Fundamental Rights" } ] },
+        { "topic_id": "T07", "name": "The Parliament", "subtopics": [ { "id": 23, "name": "Parliament" }, { "id": 24, "name": "Parliamentary Committees" }, { "id": 25, "name": "Parliamentary Forums" }, { "id": 26, "name": "Parliamentary Group" } ] },
+        { "topic_id": "T08", "name": "State Executive & Legislature", "subtopics": [ { "id": 31, "name": "Governor" }, { "id": 32, "name": "Chief Minister" }, { "id": 33, "name": "State Council of Ministers" }, { "id": 34, "name": "State Legislature" } ] },
+        { "topic_id": "T09", "name": "The Judiciary", "subtopics": [ { "id": 27, "name": "Supreme Court" }, { "id": 28, "name": "Judicial Review" }, { "id": 29, "name": "Judicial Activism" }, { "id": 30, "name": "Public Interest Litigation (PIL)" }, { "id": 35, "name": "High Court" }, { "id": 36, "name": "Subordinate Courts" } ] },
+        { "topic_id": "T12", "name": "Panchayats & Municipalities", "subtopics": [ { "id": 40, "name": "Panchayati Raj" }, { "id": 41, "name": "Municipalities" } ] },
+        { "topic_id": "T14", "name": "Election Commission & Reforms", "subtopics": [ { "id": 42, "name": "Election Commission" }, { "id": 77, "name": "Elections" }, { "id": 78, "name": "Election Laws" }, { "id": 79, "name": "Electoral Reforms" } ] },
+        { "topic_id": "T22", "name": "Anti-Defection Law", "subtopics": [ { "id": 82, "name": "Anti-Defection Law" } ] }
+      ]
+    },
+    {
+      "id": "tier2",
+      "name": "Medium Yield",
+      "weight": 2,
+      "badge": "⚡ Medium Yield",
+      "topics": [
+        { "topic_id": "T05", "name": "DPSP & Fundamental Duties", "subtopics": [ { "id": 9, "name": "Directive Principles of State Policy" }, { "id": 10, "name": "Fundamental Duties" } ] },
+        { "topic_id": "T06", "name": "The Union Executive", "subtopics": [ { "id": 18, "name": "President" }, { "id": 19, "name": "Vice-President" }, { "id": 20, "name": "Prime Minister" }, { "id": 21, "name": "Central Council of Ministers" }, { "id": 22, "name": "Cabinet Committees" } ] },
+        { "topic_id": "T10", "name": "Federal & Inter-State Relations", "subtopics": [ { "id": 13, "name": "Federal System" }, { "id": 14, "name": "Centre-State Relations" }, { "id": 15, "name": "Inter-State Relations" } ] },
+        { "topic_id": "T11", "name": "Emergency & Special Provisions", "subtopics": [ { "id": 17, "name": "Emergency Provisions" }, { "id": 16, "name": "Special Provisions for Some States" } ] },
+        { "topic_id": "T16", "name": "Finance Commission & CAG", "subtopics": [ { "id": 45, "name": "Finance Commission" }, { "id": 46, "name": "GST Council" }, { "id": 51, "name": "Comptroller and Auditor General" } ] }
+      ]
+    },
+    {
+      "id": "tier3",
+      "name": "Low Yield",
+      "weight": 1,
+      "badge": "🌱 Low Yield",
+      "topics": [
+        { "topic_id": "T01", "name": "Evolution of the Constitution", "subtopics": [ { "id": 1, "name": "Historical Background" }, { "id": 2, "name": "Making of the Constitution" } ] },
+        { "topic_id": "T02", "name": "Preamble, Territory & Citizenship", "subtopics": [ { "id": 3, "name": "Salient Features" }, { "id": 4, "name": "Preamble" }, { "id": 5, "name": "Union & its Territory" }, { "id": 6, "name": "Citizenship" } ] },
+        { "topic_id": "T03", "name": "Amendment & Basic Structure", "subtopics": [ { "id": 11, "name": "Amendment of the Constitution" }, { "id": 12, "name": "Basic Structure" } ] },
+        { "topic_id": "T13", "name": "Scheduled & Tribal Areas", "subtopics": [ { "id": 39, "name": "Scheduled and Tribal Areas" } ] },
+        { "topic_id": "T15", "name": "Public Service Commissions", "subtopics": [ { "id": 43, "name": "UPSC" }, { "id": 44, "name": "SPSC" }, { "id": 69, "name": "JSPSC" }, { "id": 70, "name": "Rights and Liabilities of Government" } ] },
+        { "topic_id": "T17", "name": "AGI & Advocate General", "subtopics": [ { "id": 52, "name": "Attorney General of India" }, { "id": 53, "name": "Advocate General of the State" } ] },
+        { "topic_id": "T18", "name": "Statutory Commissions (Social)", "subtopics": [ { "id": 47, "name": "NC for SCs, STs, and OBCs" }, { "id": 48, "name": "Special Officer for Linguistic Minorities" }, { "id": 49, "name": "NC for Women" }, { "id": 50, "name": "NCPCR" }, { "id": 51, "name": "NC for Minorities" } ] },
+        { "topic_id": "T19", "name": "NITI Aayog & Lokpal", "subtopics": [ { "id": 54, "name": "NITI Aayog" }, { "id": 55, "name": "NHRC" }, { "id": 56, "name": "SHRC" }, { "id": 60, "name": "CIC" }, { "id": 61, "name": "SIC" }, { "id": 62, "name": "CVC" }, { "id": 64, "name": "Lokpal and Lokayuktas" } ] },
+        { "topic_id": "T20", "name": "Investigation & Security Agencies", "subtopics": [ { "id": 63, "name": "CBI" }, { "id": 65, "name": "NIA" }, { "id": 66, "name": "NDMA" } ] },
+        { "topic_id": "T21", "name": "Political Parties & Dynamics", "subtopics": [ { "id": 75, "name": "Political Parties" }, { "id": 76, "name": "Regional Parties" }, { "id": 80, "name": "Voting Behaviour" }, { "id": 81, "name": "Coalition Govt" }, { "id": 83, "name": "Pressure Groups" }, { "id": 84, "name": "Foreign Policy" } ] },
+        { "topic_id": "T23", "name": "Tribunals & Consumer Protection", "subtopics": [ { "id": 37, "name": "Tribunals" }, { "id": 38, "name": "Consumer Commissions" } ] },
+        { "topic_id": "T24", "name": "Global Comparison & Doctrines", "subtopics": [ { "id": 86, "name": "Constitutional Doctrines" }, { "id": 87, "name": "Comparison of Constitution" }, { "id": 88, "name": "Important Landmarks" } ] },
+        { "topic_id": "T25", "name": "Official Language & Misc.", "subtopics": [ { "id": 67, "name": "Official Language" }, { "id": 68, "name": "Public Services" }, { "id": 70, "name": "Special Provisions for Some Classes" }, { "id": 85, "name": "National Integration" }, { "id": 89, "name": "NCRWC" } ] }
+      ]
+    }
+  ]
+}
