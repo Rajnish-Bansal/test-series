@@ -65,16 +65,18 @@ export default function TestsList() {
 
         // Extract all unique subjects and their microTags
         const subjectTags = {};
-        rawQuestions.forEach(q => {
-            const subj = q.subject || q.topic;
-            const tag = q.subtopic || q.microTag;
-            if (!subjectTags[subj]) {
-                subjectTags[subj] = new Set();
-            }
-            if (tag) {
-                subjectTags[subj].add(tag);
-            }
-        });
+        if (Array.isArray(rawQuestions)) {
+            rawQuestions.forEach(q => {
+                const subj = q.subject || q.topic;
+                const tag = q.subtopic || q.microTag;
+                if (!subjectTags[subj]) {
+                    subjectTags[subj] = new Set();
+                }
+                if (tag) {
+                    subjectTags[subj].add(tag);
+                }
+            });
+        }
 
         // 2 & 3. Subject-Wise & Topic-Wise Tests
         Object.entries(subjectTags).forEach(([subj, tagsSet]) => {

@@ -224,7 +224,7 @@ export default function Navbar() {
                     <div className="bg-white rounded-3xl shadow-2xl max-w-sm w-full overflow-hidden animate-in zoom-in-95 duration-300 border border-slate-100">
                         <div className="p-8 text-center">
                             <div className="w-16 h-16 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <ListIcon className="w-8 h-8" />
+                                <List className="w-8 h-8" />
                             </div>
                             <h3 className="text-xl font-black text-slate-800 mb-2">Curating Tests</h3>
                             <p className="text-slate-500 font-medium mb-8 leading-relaxed">
