@@ -273,7 +273,7 @@ export default function Dashboard() {
                     <div>
                         <h2 className="text-2xl font-bold text-slate-800 flex items-center gap-2">
                             <BarChart2 className="text-upsc-blue w-6 h-6" /> 
-                            {isAuthenticated ? 'Subject-Wise Analytics' : 'Choose a Subject to Begin'}
+                            Subject-Wise Analytics
                         </h2>
                         {!isAuthenticated && <p className="text-slate-500 text-sm font-medium mt-1">Select a subject to start a focused practice session.</p>}
                     </div>
