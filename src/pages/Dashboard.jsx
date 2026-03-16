@@ -206,11 +206,11 @@ export default function Dashboard() {
                 </div>
 
                 <div className={`p-4 sm:p-5 rounded-2xl bg-white border-2 border-upsc-blue shadow-lg flex flex-col justify-center relative group transition-all ${!showSubjectDropdown ? 'hover:-translate-y-1' : ''}`}>
-                    <div className="flex justify-between items-center">
-                        <div className="flex-1">
+                    <div className="flex justify-between items-center gap-3">
+                        <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2 mb-1.5">
                                 <Target className="w-4 h-4 sm:w-5 sm:h-5 text-upsc-blue" />
-                                <span className="font-bold text-upsc-blue uppercase tracking-widest text-[10px] sm:text-xs">Subject Focus Test</span>
+                                <span className="font-bold text-upsc-blue uppercase tracking-widest text-[10px] sm:text-xs truncate">Subject Focus Test</span>
                             </div>
                             <div className="relative" ref={dropdownRef}>
                                 <button
@@ -254,7 +254,12 @@ export default function Dashboard() {
                         <button
                             onClick={() => selectedSubject && navigate(`/exam?subject=${encodeURIComponent(selectedSubject)}`)}
                             disabled={!selectedSubject}
-                            className={`absolute right-6 top-1/2 -translate-y-1/2 p-2 rounded-full transition-all hidden sm:flex ${selectedSubject ? 'bg-blue-50 hover:bg-blue-600 text-blue-600 hover:text-white shadow-sm cursor-pointer hover:scale-110' : 'bg-slate-100 text-slate-300 cursor-not-allowed opacity-50'}`}
+                            className={`flex items-center justify-center p-3 rounded-xl transition-all shrink-0 ${
+                                selectedSubject 
+                                    ? 'bg-upsc-blue text-white shadow-md hover:scale-105 active:scale-95' 
+                                    : 'bg-slate-200 text-slate-400 cursor-not-allowed'
+                            }`}
+                            aria-label="Start Test"
                         >
                             <ArrowRight className="w-5 h-5" />
                         </button>

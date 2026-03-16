@@ -66,9 +66,9 @@ export default function TopicCard({ topic, index, weight, badge, accuracy = 0, s
               const subtopicTags = subtopics.map(ch => ch.name);
               onStartTest && onStartTest(topic.topic_id, topic.name, subtopicTags);
             }}
-            className="p-3 bg-upsc-blue hover:bg-upsc-blue-dark text-white rounded-xl shadow-lg transition-all hover:scale-105 active:scale-95 flex items-center gap-2 group"
+            className="p-3 bg-upsc-blue hover:bg-upsc-blue-dark text-white rounded-xl shadow-lg transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2 group shrink-0"
           >
-            <Play className="w-4 h-4 fill-current" />
+            <Play className="w-4 h-4 fill-current shrink-0" />
             <span className="text-sm font-bold hidden sm:inline">Start Test</span>
           </button>
           
