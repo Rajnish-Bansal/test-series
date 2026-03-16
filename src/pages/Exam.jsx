@@ -19,7 +19,7 @@ export default function Exam() {
     const topic = searchParams.get('subject') ? searchParams.get('topic') : null; // Level 2
     const subtopic = searchParams.get('subtopic') || searchParams.get('microTag'); // Level 3
     const [startTime, setStartTime] = useState(null);
-    const [timeElapsed, setTimeElapsed] = useState(0);
+    const [timeRemaining, setTimeRemaining] = useState(0);
 
     const fetchQuestions = () => {
         setLoading(true);
@@ -40,7 +40,8 @@ export default function Exam() {
                 setQuestions(data);
                 setLoading(false);
                 setShowInstructions(false);
-                setStartTime(Date.now()); // Start the timer
+                setStartTime(Date.now()); // For historical tracking accurately
+                setTimeRemaining(data.length * 60); // 1 minute per question
                 
                 // Load persisted progress from CLOUD
                 const token = localStorage.getItem('token');
@@ -92,16 +93,23 @@ export default function Exam() {
         }
     }, [answers, currentIndex, questions, subject]);
 
-    // Live Timer Effect
+    // Live Countdown Timer Effect
     useEffect(() => {
         let timer;
-        if (questions.length > 0 && !showInstructions && !submitting) {
+        if (questions.length > 0 && !showInstructions && !submitting && timeRemaining > 0) {
             timer = setInterval(() => {
-                setTimeElapsed(prev => prev + 1);
+                setTimeRemaining(prev => {
+                    if (prev <= 1) {
+                        clearInterval(timer);
+                        handleSubmit(); // Auto-submit when time is up
+                        return 0;
+                    }
+                    return prev - 1;
+                });
             }, 1000);
         }
         return () => clearInterval(timer);
-    }, [questions.length, showInstructions, submitting]);
+    }, [questions.length, showInstructions, submitting, timeRemaining === 0]);
 
     const formatTimeDisplay = (seconds) => {
         const mins = Math.floor(seconds / 60);
@@ -427,9 +435,9 @@ export default function Exam() {
             {/* Header Info â€” fixed height */}
             <div className="flex justify-between items-center bg-white p-3 sm:p-4 rounded-xl shadow-sm border border-slate-100 shrink-0">
                 <div className="flex gap-2 items-center">
-                    <span className="bg-upsc-blue text-white px-3 py-1 rounded-md text-sm font-bold flex items-center gap-2">
+                    <span className={`${timeRemaining < 60 ? 'bg-red-600 animate-pulse' : 'bg-upsc-blue'} text-white px-3 py-1 rounded-md text-sm font-bold flex items-center gap-2 transition-colors`}>
                         <Clock className="w-3.5 h-3.5" />
-                        {formatTimeDisplay(timeElapsed)}
+                        {formatTimeDisplay(timeRemaining)}
                     </span>
                     <span className="bg-slate-800 text-white px-3 py-1 rounded-md text-sm font-bold">
                         Q {currentIndex + 1} / {questions.length}
