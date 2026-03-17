@@ -35,13 +35,19 @@ export default function Exam() {
         }
 
         fetch(url)
-            .then(res => res.json())
+            .then(res => {
+                if (!res.ok) throw new Error(`Server error: ${res.status}`);
+                return res.json();
+            })
             .then(data => {
+                if (!Array.isArray(data) || data.length === 0) {
+                    throw new Error('No questions found for the selected criteria.');
+                }
                 setQuestions(data);
                 setLoading(false);
                 setShowInstructions(false);
-                setStartTime(Date.now()); // For historical tracking accurately
-                setTimeRemaining(data.length * 60); // 1 minute per question
+                setStartTime(Date.now());
+                setTimeRemaining(data.length * 60);
                 
                 // Load persisted progress from CLOUD
                 const token = localStorage.getItem('token');
@@ -56,12 +62,13 @@ export default function Exam() {
                             setCurrentIndex(progressData.progress.currentIndex || 0);
                         }
                     })
-                    .catch(e => console.error("Cloud progress load failed", e));
+                    .catch(e => console.error('Cloud progress load failed', e));
                 }
             })
             .catch(err => {
-                console.error(err);
+                console.error('Exam fetch failed:', err);
                 setLoading(false);
+                alert(`Could not load questions: ${err.message}`);
             });
     };
 
@@ -377,12 +384,32 @@ export default function Exam() {
                                 </div>
                             </div>
 
-                            <div className="bg-amber-50 p-4 rounded-xl border border-amber-100 flex items-start gap-3">
-                                <AlertCircle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-                                <p className="text-[11px] text-amber-700 font-medium leading-relaxed">
-                                    <span className="font-bold">Pro Tip:</span> Focus on precision. This application tracks your <span className="font-bold underline">Mastery Capping</span> based on consistency, not just luck.
-                                </p>
-                            </div>
+                            {!isAuthenticated ? (
+                                <div className="bg-red-50 p-4 rounded-xl border border-red-200 flex flex-col gap-3">
+                                    <div className="flex items-start gap-3">
+                                        <AlertTriangle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
+                                        <div>
+                                            <p className="text-[12px] text-red-700 font-bold leading-snug">History won't be saved</p>
+                                            <p className="text-[11px] text-red-600 font-medium leading-relaxed mt-0.5">
+                                                You're not logged in. Your results will <strong>not</strong> be saved to your account and won't appear in Test History on any other device.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <button
+                                        onClick={() => navigate(`/login?redirect=${encodeURIComponent(window.location.pathname + window.location.search)}`)}
+                                        className="w-full py-2.5 bg-red-600 text-white rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-red-700 transition-all active:scale-95"
+                                    >
+                                        Login to Save History →
+                                    </button>
+                                </div>
+                            ) : (
+                                <div className="bg-amber-50 p-4 rounded-xl border border-amber-100 flex items-start gap-3">
+                                    <AlertCircle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+                                    <p className="text-[11px] text-amber-700 font-medium leading-relaxed">
+                                        <span className="font-bold">Pro Tip:</span> Focus on precision. This application tracks your <span className="font-bold underline">Mastery Capping</span> based on consistency, not just luck.
+                                    </p>
+                                </div>
+                            )}
                         </div>
 
                         <div className="mt-6 flex gap-3">

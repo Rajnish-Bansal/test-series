@@ -34,7 +34,7 @@ app.use(express.json());
 
 // Request logger
 app.use((req, res, next) => {
-    console.log(`[${new Date().toISOString()}] ${req.method} ${req.path}`);
+    console.log(`[${new Date().toISOString()}] ${req.method} ${req.path}${Object.keys(req.query).length ? ' - ' + JSON.stringify(req.query) : ''}`);
     next();
 });
 
@@ -62,7 +62,7 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = 3001;
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`Local API server running on http://localhost:${PORT}`);
 });
 

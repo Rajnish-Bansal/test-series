@@ -17,7 +17,7 @@ export default async function handler(req, res) {
         const activeTopic = subject ? queryTopic : null;
         const activeSubtopic = subtopic || legacySubtopic;
 
-        console.log(`[DB DEBUG] GET /api/questions - subject: "${activeSubject}", topic: "${queryTopic}", subtopic: "${activeSubtopic}"`);
+        console.log(`[API] GET /questions - subject: "${activeSubject}", subtopic: "${activeSubtopic}"`);
 
         // Build Query
         let query = {};

@@ -118,13 +118,22 @@ export default function SessionAnalysis() {
             .filter(([_, stats]) => (stats.correct / stats.total) < 0.7)
             .map(([subtopic, stats]) => ({ tag: subtopic, accuracy: (stats.correct / stats.total) * 100 }));
 
+        const correctCount = session.answers.filter(a => a.isCorrect).length;
+        const wrongCount = session.answers.filter(a => !a.isCorrect && a.userAnswer !== null).length;
+        const skippedCount = session.answers.filter(a => a.userAnswer === null).length;
+
         return {
             strategicAccuracy: sureQuestions.length > 0 ? (sureCorrect / sureQuestions.length) * 100 : 0,
             guessROI,
             strength,
             weakness,
             timeTaken: session.timeTaken || 0,
-            scoreFitness: (session.totalQuestions > 0) ? (session.score / (session.totalQuestions * 2)) * 100 : 0
+            scoreFitness: (session.totalQuestions > 0) ? (session.score / (session.totalQuestions * 2)) * 100 : 0,
+            correctCount,
+            wrongCount,
+            skippedCount,
+            score: session.score || 0,
+            totalQuestions: session.totalQuestions || session.answers.length
         };
     }, [session]);
 
@@ -194,6 +203,31 @@ export default function SessionAnalysis() {
                         </div>
                     </div>
                     <button onClick={() => navigate('/dashboard')} className="hidden sm:flex items-center gap-2 text-xs font-black text-slate-400 hover:text-upsc-blue transition-all uppercase tracking-widest">End Review <X className="w-4 h-4" /></button>
+                </div>
+
+                {/* Summary Stats Bar */}
+                <div className="bg-white p-6 rounded-[2rem] border border-slate-100 shadow-sm flex flex-wrap items-center justify-between gap-6">
+                    <div className="flex flex-1 items-center justify-around gap-4 min-w-[300px]">
+                        <div className="text-center group">
+                            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-1">Final Score</p>
+                            <p className="text-3xl font-black text-upsc-blue group-hover:scale-110 transition-transform">{(analytics?.score || 0).toFixed(2)}</p>
+                        </div>
+                        <div className="h-10 w-[1px] bg-slate-100"></div>
+                        <div className="text-center group">
+                            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-1">Correct</p>
+                            <p className="text-3xl font-black text-green-600 group-hover:scale-110 transition-transform">{analytics?.correctCount || 0}</p>
+                        </div>
+                        <div className="h-10 w-[1px] bg-slate-100"></div>
+                        <div className="text-center group">
+                            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-1">Wrong</p>
+                            <p className="text-3xl font-black text-red-500 group-hover:scale-110 transition-transform">{analytics?.wrongCount || 0}</p>
+                        </div>
+                        <div className="h-10 w-[1px] bg-slate-100"></div>
+                        <div className="text-center group">
+                            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-1">Skipped</p>
+                            <p className="text-3xl font-black text-slate-400 group-hover:scale-110 transition-transform">{analytics?.skippedCount || 0}</p>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Performance Rings - Row of 4 */}
