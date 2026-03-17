@@ -35,9 +35,49 @@ export default function Auth() {
 
             const data = await res.json();
             if (data.success) {
-                // Use username as the display name if no name set
                 const userObj = { ...data.user, name: data.user.name || data.user.username || 'Aspirant' };
                 login(userObj, data.token);
+
+                // 🔄 Claim any pending guest session (taken while not logged in)
+                const pendingSession = sessionStorage.getItem('latestGuestSession');
+                if (pendingSession) {
+                    try {
+                        const sessionData = JSON.parse(pendingSession);
+                        // Only claim real sessions (not temp shell objects)
+                        if (sessionData && sessionData.totalQuestions > 0) {
+                            const claimRes = await fetch('/api/evaluate', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'Authorization': `Bearer ${data.token}`
+                                },
+                                body: JSON.stringify({
+                                    sessionData: {
+                                        totalQuestions: sessionData.totalQuestions,
+                                        attempted: sessionData.attempted,
+                                        correct: sessionData.correct,
+                                        incorrect: sessionData.incorrect,
+                                        score: sessionData.score,
+                                        isSectional: sessionData.isSectional,
+                                        subject: sessionData.subject,
+                                        subtopic: sessionData.subtopic,
+                                        topicAccuracy: sessionData.topicAccuracy,
+                                        answers: sessionData.answers,
+                                        timeTaken: sessionData.timeTaken,
+                                        timestamp: sessionData.timestamp
+                                    },
+                                    incorrectQuestions: []
+                                })
+                            });
+                            if (claimRes.ok) {
+                                sessionStorage.removeItem('latestGuestSession');
+                            }
+                        }
+                    } catch (claimErr) {
+                        console.error('Could not claim guest session:', claimErr);
+                    }
+                }
+
                 navigate(redirectPath);
             } else {
                 setError(data.error || 'Authentication failed');
